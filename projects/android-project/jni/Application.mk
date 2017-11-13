@@ -1,5 +1,7 @@
 APP_PROJECT_PATH		:= $(call my-dir)/..
 
+APP_SHORT_COMMANDS := true
+
 EE_SDL_VERSION			:= EE_SDL_VERSION_2
 
 EE_GLES_VERSION			:= -DEE_GLES2 -DSOIL_GLES2 -DSDL_GLES2 -DEE_GLES1 -DSOIL_GLES1 -DSDL_GLES1
@@ -20,6 +22,6 @@ APP_CPPFLAGS			:= -std=c++11 -frtti -fexceptions
 
 APP_PLATFORM			:= android-14
 APP_MODULES				:= main
-APP_ABI					:= armeabi-v7a x86
+APP_ABI					:= armeabi-v7a
 
 NDK_TOOLCHAIN_VERSION	:= clang

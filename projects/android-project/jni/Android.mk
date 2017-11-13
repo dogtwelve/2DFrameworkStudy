@@ -3,6 +3,8 @@ MY_PATH					:= $(LOCAL_PATH)/../../../src/eepp
 INC_PATH				:= $(LOCAL_PATH)/../../../include
 BASE_PATH				:= $(LOCAL_PATH)/../../../src
 
+LOCAL_SHORT_COMMANDS := true
+
 MY_SDL_PATH				:= $(MY_PATH)/helper/SDL2
 MY_SDL_MAIN_PATH		:= helper/SDL2/src/main/android/*.c
 
@@ -120,7 +122,7 @@ LOCAL_MODULE			:= freetype
 
 # LOCAL_SRC_FILES += $(foreach F, $(APP_SUBDIRS), $(addprefix $(F)/,$(notdir $(wildcard $(LOCAL_PATH)/$(F)/*.c))))
 
-# 遍历目录及子目录的函数
+# Walk through a directory recursively
 define walk
 $(wildcard $(1)) $(foreach e, $(wildcard $(1)/*), $(call walk, $(e)))
 endef
